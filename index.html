@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Réseau 4S en chantier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+  :root {
+    --ground: #EEF1EC;
+    --ink: #1C2623;
+    --muted: #55625D;
+    --accent: #1E6F63;
+    --tape-a: #F2C230;
+    --tape-b: #1C2623;
+    --line: #CBD3CD;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #141B19;
+      --ink: #E8EEEA;
+      --muted: #A3B0AA;
+      --accent: #5FC2AE;
+      --tape-a: #E5B52A;
+      --tape-b: #141B19;
+      --line: #2C3834;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #141B19;
+    --ink: #E8EEEA;
+    --muted: #A3B0AA;
+    --accent: #5FC2AE;
+    --tape-a: #E5B52A;
+    --tape-b: #141B19;
+    --line: #2C3834;
+    color-scheme: dark;
+  }
+  html, body { height: 100%; }
+  body { margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    display: flex;
+    flex-direction: column;
+  }
+  .tape {
+    height: 18px;
+    background: repeating-linear-gradient(-45deg, var(--tape-a) 0 18px, var(--tape-b) 18px 36px);
+    flex: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .tape { background-size: 51px 18px; animation: slide 2.4s linear infinite; }
+    @keyframes slide { to { background-position: 51px 0; } }
+  }
+  main {
+    flex: 1;
+    display: grid;
+    align-content: center;
+    padding-inline: 20px;
+    padding-block: 56px;
+  }
+  .wrap {
+    max-width: 38rem;
+    margin-inline: auto;
+    width: 100%;
+    display: grid;
+    gap: 22px;
+  }
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    margin: 0;
+    font-family: "Bricolage Grotesque", "Atkinson Hyperlegible", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 8vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  h1 span { color: var(--accent); }
+  p { margin: 0; max-width: 34rem; color: var(--muted); }
+  p strong { color: var(--ink); }
+  .progress {
+    display: grid;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    margin-top: 6px;
+  }
+  .bar {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--line);
+    overflow: hidden;
+  }
+  .bar i {
+    display: block;
+    height: 100%;
+    width: 70%;
+    background: var(--accent);
+    border-radius: 4px;
+  }
+  .progress small {
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-variant-numeric: tabular-nums;
+  }
+  footer {
+    padding-inline: 20px;
+    padding-block: 18px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+    border-top: 1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+<div class="tape" aria-hidden="true"></div>
+<main>
+  <div class="wrap">
+    <div class="eyebrow">Association Réseau 4S · site en chantier</div>
+    <h1>Notre nouveau site <span>arrive bientôt.</span></h1>
+    <p>L'<strong>Association Réseau 4S</strong> prépare son site web pour qu'il soit plus rapide, plus clair et plus simple à utiliser. Merci de votre patience, on revient très vite.</p>
+    <div class="progress" role="img" aria-label="Avancement du chantier environ 70 pour cent">
+      <div class="bar"><i></i></div>
+      <small><span>Travaux en cours</span><span>Ouverture prochaine</span></small>
+    </div>
+  </div>
+</main>
+<footer>© 2026 Association Réseau 4S</footer>
+</body>
+</html>
